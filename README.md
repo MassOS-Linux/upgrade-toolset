@@ -20,13 +20,21 @@ The included tools are:
 - [Bash](https://www.gnu.org/software/bash/)
 - [Coreutils](https://www.gnu.org/software/coreutils/)
 - [Diffutils](https://www.gnu.org/software/diffutils/)
+- [File](https://darwinsys.com/file/)
 - [Findutils](https://www.gnu.org/software/findutils/)
+- [Gawk](https://www.gnu.org/software/gawk/)
+- [Gettext-Tools](https://www.gnu.org/software/gettext/)
 - [Grep](https://www.gnu.org/software/grep/)
+- [Gzip](https://www.gnu.org/software/gzip/)
+- [M4](https://www.gnu.org/software/m4/)
+- [Make](https://www.gnu.org/software/make/)
+- [Patch](https://savannah.gnu.org/projects/patch/)
 - [Sed](https://www.gnu.org/software/sed/)
+- [Tar](https://www.gnu.org/software/tar/)
+- [Xz](https://tukaani.org/xz/)
 
-These are the only tools needed by massos-upgrade during the upgrade process.
-For example, it doesn't include **tar**, as that is only needed to extract the
-update package before the upgrade process actually starts.
+These are the tools needed by massos-upgrade during the upgrade process, plus
+(as of 2022-10-15) some additional ones which may also be necessary/useful.
 
 Package versions are defined in `versions.conf`, which is sourced by the build
-script, `build.sh`. Don't expect new releases frequently.
+script, `build.sh`. The software will only be updated on an as-needed basis.
