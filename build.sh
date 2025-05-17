@@ -29,27 +29,27 @@ MAKEFLAGS="-j$(nproc)"
 export CC CXX CFLAGS CPPFLAGS CXXFLAGS LDFLAGS MAKEFLAGS
 
 echo "Downloading toolchain..."
-curl -LO https://github.com/DanielMYT/musl-cross-make/releases/download/20220901/x86_64-linux-musl-toolchain.tar.xz
+curl -fLO https://github.com/DanielMYT/musl-cross-make/releases/download/"${TOOLCHAIN_VER}"/x86_64-linux-musl-toolchain.tar.xz
 
 echo "Downloading sources..."
-curl -LO https://ftpmirror.gnu.org/gnu/bash/bash-"${BASH_VER}".tar.gz
-curl -LO https://ftpmirror.gnu.org/gnu/coreutils/coreutils-"${COREUTILS_VER}".tar.xz
-curl -LO https://ftpmirror.gnu.org/gnu/diffutils/diffutils-"${DIFFUTILS_VER}".tar.xz
-curl -LO https://astron.com/pub/file/file-"${FILE_VER}".tar.gz
-curl -LO https://ftpmirror.gnu.org/gnu/findutils/findutils-"${FINDUTILS_VER}".tar.xz
-curl -LO https://ftpmirror.gnu.org/gnu/gawk/gawk-"${GAWK_VER}".tar.xz
-curl -LO https://ftpmirror.gnu.org/gnu/gettext/gettext-"${GETTEXT_VER}".tar.xz
-curl -LO https://ftpmirror.gnu.org/gnu/grep/grep-"${GREP_VER}".tar.xz
-curl -LO https://ftpmirror.gnu.org/gnu/gzip/gzip-"${GZIP_VER}".tar.xz
-curl -LO https://ftpmirror.gnu.org/gnu/m4/m4-"${M4_VER}".tar.xz
-curl -LO https://ftpmirror.gnu.org/gnu/make/make-"${MAKE_VER}".tar.gz
-curl -LO https://ftpmirror.gnu.org/gnu/patch/patch-"${PATCH_VER}".tar.xz
-curl -LO https://ftpmirror.gnu.org/gnu/sed/sed-"${SED_VER}".tar.gz
-curl -LO https://ftpmirror.gnu.org/gnu/tar/tar-"${TAR_VER}".tar.xz
-curl -LO https://freefr.dl.sourceforge.net/project/lzmautils/xz-"${XZ_VER}".tar.xz
+curl -fLO https://ftpmirror.gnu.org/gnu/bash/bash-"${BASH_VER}".tar.gz
+curl -fLO https://ftpmirror.gnu.org/gnu/coreutils/coreutils-"${COREUTILS_VER}".tar.xz
+curl -fLO https://ftpmirror.gnu.org/gnu/diffutils/diffutils-"${DIFFUTILS_VER}".tar.xz
+curl -fLO https://astron.com/pub/file/file-"${FILE_VER}".tar.gz
+curl -fLO https://ftpmirror.gnu.org/gnu/findutils/findutils-"${FINDUTILS_VER}".tar.xz
+curl -fLO https://ftpmirror.gnu.org/gnu/gawk/gawk-"${GAWK_VER}".tar.xz
+curl -fLO https://ftpmirror.gnu.org/gnu/gettext/gettext-"${GETTEXT_VER}".tar.xz
+curl -fLO https://ftpmirror.gnu.org/gnu/grep/grep-"${GREP_VER}".tar.xz
+curl -fLO https://ftpmirror.gnu.org/gnu/gzip/gzip-"${GZIP_VER}".tar.xz
+curl -fLO https://ftpmirror.gnu.org/gnu/m4/m4-"${M4_VER}".tar.xz
+curl -fLO https://ftpmirror.gnu.org/gnu/make/make-"${MAKE_VER}".tar.gz
+curl -fLO https://ftpmirror.gnu.org/gnu/patch/patch-"${PATCH_VER}".tar.xz
+curl -fLO https://ftpmirror.gnu.org/gnu/sed/sed-"${SED_VER}".tar.gz
+curl -fLO https://ftpmirror.gnu.org/gnu/tar/tar-"${TAR_VER}".tar.xz
+curl -fLO https://freefr.dl.sourceforge.net/project/lzmautils/xz-"${XZ_VER}".tar.xz
 
 echo "Extracting toolchain..."
-tar -xf x86_64-linux-musl-toolchain.tar.xz
+tar -xf x86_64-linux-musl-toolchain.tar.xz --strip-components=1
 export PATH="$PATH:${workdir}/bin"
 
 echo "Building Bash..."
